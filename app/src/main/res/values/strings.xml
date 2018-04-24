@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Goalit</string>
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Achieve Your Dreams!</string>
+    <string name="slide_1_desc">You can finally achieve your dreams and goals by adding and completing small daily achievable tasks!</string>
+
+    <string name="slide_2_title">Complete Daily Tasks!</string>
+    <string name="slide_2_desc">Break your goals into small achievable daily tasks!</string>
+
+    <string name="slide_3_title">Become More Productive!</string>
+    <string name="slide_3_desc">Manage your time and become consistent with achieving your small daily tasks and increase your self esteem!</string>
+    <string name="google_btn_text">Continue With Google</string>
+    <string name="server_client_id">780999330859-3n3vm50k2lttfb9jvqk9kfnuudoapv2h.apps.googleusercontent.com</string>
+
+
+</resources>
