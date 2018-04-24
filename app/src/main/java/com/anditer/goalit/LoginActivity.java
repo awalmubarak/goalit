@@ -3,8 +3,8 @@ package com.anditer.goalit;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -52,13 +52,15 @@ public class LoginActivity extends AppCompatActivity{
     private void updateUI(GoogleSignInAccount account) {
 
         if (account!=null){
-            Log.i("LoginAccount", "NotNull");
-            Log.i("email", account.getEmail());
-            Log.i("name", account.getDisplayName());
-            Log.i("ID", account.getId());
-            Log.i("token", String.valueOf(account.getIdToken()));
+
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("email", account.getEmail());
+            intent.putExtra("name", account.getDisplayName());
+            intent.putExtra("ID", account.getId());
+            intent.putExtra("token", String.valueOf(account.getIdToken()));
+            startActivity(intent);
         }else{
-            Log.i("LoginAccount", "Null");
+            Toast.makeText(this, "Please Login", Toast.LENGTH_LONG).show();
         }
     }
 
