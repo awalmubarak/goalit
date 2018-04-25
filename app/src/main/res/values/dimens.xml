@@ -15,4 +15,5 @@
     <dimen name="taskItemHeight">80dp</dimen>
     <dimen name="taskItemMargins">5dp</dimen>
     <dimen name="taskItemElevation">6dp</dimen>
+    <dimen name="goalTitleSize">28sp</dimen>
 </resources>
