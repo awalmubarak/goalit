@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/taskCardItem"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/taskItemHeight"
+    android:elevation="@dimen/taskItemElevation"
+    android:layout_marginBottom="@dimen/taskItemMargins"
+    android:layout_marginTop="@dimen/taskItemMargins"
+    android:layout_marginLeft="@dimen/rootViewMargin"
+    android:layout_marginRight="@dimen/rootViewMargin"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/taskName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="28dp"
+            android:textColor="@color/taskTitle"
+            android:textSize="@dimen/taskTitleSize"
+            app:layout_constraintEnd_toStartOf="@+id/taskCheckBox"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="This is a simple CheckBox for" />
+
+
+        <CheckBox
+            android:id="@+id/taskCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="19dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="19dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+    
+    
+
+</android.support.v7.widget.CardView>
