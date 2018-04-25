@@ -22,6 +22,7 @@
             android:layout_margin="@dimen/taskItemMargins"
             app:layout_constraintEnd_toEndOf="parent"
             android:gravity="center"
+            android:fontFamily="@font/roboto_regular"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="Perhaps not the answer you are wanting, but you can probably " />
 
@@ -52,7 +53,7 @@
                 android:layout_weight="1"
                 android:gravity="center|start"
                 android:textSize="17sp"
-                android:fontFamily="sans-serif-condensed"
+                android:fontFamily="@font/roboto_light"
                 android:textColor="@android:color/black"
                 tools:text="Tasks Added: 5076"/>
 
@@ -64,7 +65,7 @@
                 android:layout_weight="1"
                 android:gravity="center|end"
                 android:textSize="17sp"
-                android:fontFamily="sans-serif-condensed"
+                android:fontFamily="@font/roboto_light"
                 android:textColor="@android:color/black"
                 tools:text="Days Left: 5076"/>
 
