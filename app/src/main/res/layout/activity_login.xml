@@ -1,54 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.anditer.goalit.activities.LoginActivity">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/mLoginLogo"
-        android:layout_width="@dimen/img_width_height"
-        android:layout_height="@dimen/img_width_height"
-        android:background="@color/colorAccent"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/productive_icon"
-        android:layout_marginTop="50dp"/>
-
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/mLoginLogo"
-        android:fontFamily="@font/robotoslab_bold"
-        android:text="@string/app_name"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="50sp"
-        android:id="@+id/textView" />
+        android:layout_height="match_parent"
+        tools:context="com.anditer.goalit.activities.LoginActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:fontFamily="@font/roboto_regular"
-        android:textSize="19dp"
-        android:text="Sign in to get Started"
-        android:id="@+id/textView2" />
+        <ImageView
+            android:id="@+id/mLoginLogo"
+            android:layout_width="@dimen/img_width_height"
+            android:layout_height="@dimen/img_width_height"
+            android:background="@color/colorAccent"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/productive_icon"
+            android:layout_marginTop="50dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/mLoginLogo"
+            android:fontFamily="@font/robotoslab_bold"
+            android:text="@string/app_name"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="50sp"
+            android:id="@+id/textView" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="19dp"
+            android:text="Sign in to get Started"
+            android:id="@+id/textView2" />
 
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp" />
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="37dp" />
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>
