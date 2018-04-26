@@ -24,6 +24,7 @@
             android:gravity="center"
             android:fontFamily="@font/roboto_regular"
             app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/goalTitle"
             tools:text="Perhaps not the answer you are wanting, but you can probably " />
 
 

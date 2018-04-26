@@ -14,17 +14,6 @@
 
         </android.support.v7.widget.RecyclerView>
 
-    <com.getbase.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddNote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="5dp"
-        app:fab_icon="@drawable/ic_add"
-        android:elevation="5dp"
-        />
 
-    </RelativeLayout>
+</RelativeLayout>
 
