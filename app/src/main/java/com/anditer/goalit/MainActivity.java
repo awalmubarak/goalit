@@ -29,23 +29,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setUpToolbar();
+        setupViewPager();
+        setupTabLayout();
 
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        viewPager = findViewById(R.id.viewpager);
-        setupViewPager(viewPager);
-
-        tabLayout = findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
     }
 
-    private void setupViewPager(ViewPager viewPager) {
+    private void setUpToolbar(){
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitleTextAppearance(this,R.style.TolBarStyle);
+        setSupportActionBar(toolbar);
+
+    }
+
+    private void setupViewPager() {
+        viewPager = findViewById(R.id.viewpager);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new TaskFragment(), "Today's Tasks");
         adapter.addFragment(new GoalFragment(), "Goals");
         viewPager.setAdapter(adapter);
+    }
+
+    private void setupTabLayout(){
+        tabLayout = findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override

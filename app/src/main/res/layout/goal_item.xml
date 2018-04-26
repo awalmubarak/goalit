@@ -22,7 +22,6 @@
             android:layout_margin="@dimen/taskItemMargins"
             app:layout_constraintEnd_toEndOf="parent"
             android:gravity="center"
-            android:fontFamily="@font/roboto_regular"
             app:layout_constraintStart_toStartOf="parent"
             android:textColor="@color/goalTitle"
             tools:text="Perhaps not the answer you are wanting, but you can probably " />

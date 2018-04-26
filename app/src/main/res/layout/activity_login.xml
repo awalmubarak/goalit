@@ -21,7 +21,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/mLoginLogo"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="@font/robotoslab_bold"
         android:text="@string/app_name"
         android:gravity="center"
         android:layout_marginTop="20dp"
@@ -37,6 +37,7 @@
         android:layout_below="@+id/textView"
         android:layout_marginTop="32dp"
         android:gravity="center"
+        android:fontFamily="@font/roboto_regular"
         android:textSize="19dp"
         android:text="Sign in to get Started"
         android:id="@+id/textView2" />

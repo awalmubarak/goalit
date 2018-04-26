@@ -27,15 +27,17 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         setProfileNameAndEmail(account);
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-        setToolbarTitleAndBackButton();
+        setUpToolBar();
 
         findViewById(R.id.logout).setOnClickListener(this);
     }
 
 
 
-    private void setToolbarTitleAndBackButton(){
+    private void setUpToolBar(){
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitleTextAppearance(this,R.style.TolBarStyle);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("My Account");
 
