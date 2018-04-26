@@ -2,6 +2,7 @@ package com.anditer.goalit;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private boolean userPressedBackAgain = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +72,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+
+        if (!userPressedBackAgain) {
+            Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
+            userPressedBackAgain = true;
+        } else {
+            moveTaskToBack(true);
+        }
+
+        startPressedBackAgainResetCounter();
+
+    }
+
+    private void startPressedBackAgainResetCounter(){
+        new CountDownTimer(3000, 1000) {
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                userPressedBackAgain = false;
+            }
+        }.start();
+    }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
 
