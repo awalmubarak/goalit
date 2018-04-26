@@ -42,4 +42,6 @@
 
     <!--Goal Item Colors-->
     <color name="goalTitle">#40533d</color>
+
+    <color name="tabInActive">#9a9f9f</color>
 </resources>
