@@ -22,7 +22,8 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/WelcomeStyle" />
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ProfileActivity">
+        </activity>
     </application>
 
 </manifest>

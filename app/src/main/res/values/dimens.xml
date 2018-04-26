@@ -17,4 +17,7 @@
     <dimen name="taskItemElevation">6dp</dimen>
     <dimen name="goalTitleSize">25sp</dimen>
     <dimen name="actionBarSize">56dp</dimen>
+    <dimen name="profileNameSize">23sp</dimen>
+    <dimen name="profileEmailSize">17sp</dimen>
+    <dimen name="logoutSize">20sp</dimen>
 </resources>
