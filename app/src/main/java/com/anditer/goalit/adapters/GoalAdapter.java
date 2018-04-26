@@ -32,8 +32,8 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder>{
     public void onBindViewHolder(GoalHolder holder, int position) {
         Goal goal = goalsList.get(position);
         holder.goalTitle.setText(goal.getTitle());
-        holder.daysLeft.setText("Days Left: " + goal.getEndDate());
-        holder.taskAdded.setText("Tasks Added: " + goal.getAddedDate());
+        //holder.daysLeft.setText("Days Left: " + goal.getEndDate());
+        //holder.taskAdded.setText("Tasks Added: " + goal.getAddedDate());
 
     }
 
@@ -51,8 +51,8 @@ public class GoalAdapter extends RecyclerView.Adapter<GoalAdapter.GoalHolder>{
         public GoalHolder(View itemView) {
             super(itemView);
             goalTitle = itemView.findViewById(R.id.goalTitle);
-            taskAdded = itemView.findViewById(R.id.tasksAdded);
-            daysLeft = itemView.findViewById(R.id.daysLeft);
+            //taskAdded = itemView.findViewById(R.id.tasksAdded);
+            //daysLeft = itemView.findViewById(R.id.daysLeft);
         }
     }
 

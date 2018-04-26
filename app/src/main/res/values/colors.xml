@@ -38,4 +38,5 @@
 
     <!-- Task Item Colors-->
     <color name="taskTitle">#654949</color>
+    <color name="taskCompleted">#36d60a</color>
 </resources>
