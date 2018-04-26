@@ -1,5 +1,6 @@
 package com.anditer.goalit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.NavUtils;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.anditer.goalit.utils.PrefManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -56,6 +58,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
 
+        findViewById(R.id.loggingOutLayer).setVisibility(View.VISIBLE);
+
         buildSignInClient().signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -79,6 +83,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
     public void logoutUser(){
         //clear login preferences and cleanup the database
+        PrefManager.updateSignInPref(this,false);
+        startActivity(new Intent(this, LoginActivity.class));
+
     }
 
 

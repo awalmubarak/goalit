@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+
     class ViewPagerAdapter extends FragmentPagerAdapter {
 
         private final List<Fragment> mFragmentList = new ArrayList<>();

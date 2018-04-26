@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.anditer.goalit.utils.PrefManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -23,12 +24,12 @@ public class LoginActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.server_client_id))
-                .requestEmail()
-                .build();
+        buildGoogleSignInClient();
+        setupSignInButtonAndClickListener();
 
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+    }
+
+    private void setupSignInButtonAndClickListener(){
 
         SignInButton signInButton = findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_WIDE);
@@ -38,6 +39,15 @@ public class LoginActivity extends AppCompatActivity{
                 signIn();
             }
         });
+    }
+
+    private void buildGoogleSignInClient(){
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.server_client_id))
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
 
 
@@ -52,17 +62,22 @@ public class LoginActivity extends AppCompatActivity{
     private void updateUI(GoogleSignInAccount account) {
 
         if (account!=null){
-
-            Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("email", account.getEmail());
-            intent.putExtra("name", account.getDisplayName());
-            intent.putExtra("ID", account.getId());
-            intent.putExtra("token", String.valueOf(account.getIdToken()));
-            startActivity(intent);
+            PrefManager.updateSignInPref(this,true);
+            startMainActivity(account);
         }else{
             Toast.makeText(this, "Please Login", Toast.LENGTH_LONG).show();
         }
     }
+
+    private void startMainActivity(GoogleSignInAccount account){
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("email", account.getEmail());
+        intent.putExtra("name", account.getDisplayName());
+        intent.putExtra("ID", account.getId());
+        intent.putExtra("token", String.valueOf(account.getIdToken()));
+        startActivity(intent);
+    }
+
 
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -88,4 +103,5 @@ public class LoginActivity extends AppCompatActivity{
             updateUI(null);
         }
     }
+
 }

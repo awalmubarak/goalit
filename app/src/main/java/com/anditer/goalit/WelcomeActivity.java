@@ -36,10 +36,11 @@ public class WelcomeActivity extends AppCompatActivity {
 
         // Checking for first time launch - before calling setContentView()
         prefManager = new PrefManager(this);
-        if (!prefManager.isFirstTimeLaunch()) {
+        if (prefManager.isLoggedIn()) {
             launchHomeScreen();
             finish();
         }
+
 
         // Making notification bar transparent
         if (Build.VERSION.SDK_INT >= 21) {
@@ -74,21 +75,20 @@ public class WelcomeActivity extends AppCompatActivity {
         btnSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchHomeScreen();
+                launchLoginScreen();
             }
         });
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // checking for last page
-                // if last page home screen will be launched
+
                 int current = getItem(1);
                 if (current < layouts.length) {
                     // move to next screen
                     viewPager.setCurrentItem(current);
                 } else {
-                    launchHomeScreen();
+                    launchLoginScreen();
                 }
             }
         });
@@ -118,9 +118,12 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     private void launchHomeScreen() {
-       // prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
+        startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
         finish();
+    }
+
+    private void launchLoginScreen(){
+        startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
     }
 
     //  viewpager change listener

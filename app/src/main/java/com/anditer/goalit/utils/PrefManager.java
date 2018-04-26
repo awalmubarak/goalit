@@ -20,6 +20,7 @@ public class PrefManager {
     private static final String PREF_NAME = "goalit-welcome";
 
     private static final String IS_FIRST_TIME_LAUNCH = "IsFirstTimeLaunch";
+    private static final String IS_LOGGEDIN = "IsLoggedIn";
 
     public PrefManager(Context context) {
         this._context = context;
@@ -32,8 +33,22 @@ public class PrefManager {
         editor.commit();
     }
 
+    public void setLogin(boolean isLoggedIn){
+        editor.putBoolean(IS_LOGGEDIN, isLoggedIn);
+        editor.commit();
+    }
+
+    public static void updateSignInPref(Context context, boolean isLoggedIn){
+        PrefManager manager = new PrefManager(context);
+        manager.setLogin(isLoggedIn);
+    }
+
     public boolean isFirstTimeLaunch() {
         return pref.getBoolean(IS_FIRST_TIME_LAUNCH, true);
+    }
+
+    public boolean isLoggedIn() {
+        return pref.getBoolean(IS_LOGGEDIN, false);
     }
 
 }
