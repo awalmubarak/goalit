@@ -1,4 +1,4 @@
-package com.anditer.goalit;
+package com.anditer.goalit.fragments;
 
 
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.anditer.goalit.POJOs.Task;
+import com.anditer.goalit.R;
 import com.anditer.goalit.adapters.TaskAdapter;
 
 import java.util.ArrayList;

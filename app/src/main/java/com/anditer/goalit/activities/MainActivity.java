@@ -1,4 +1,4 @@
-package com.anditer.goalit;
+package com.anditer.goalit.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.anditer.goalit.fragments.GoalFragment;
+import com.anditer.goalit.fragments.TaskFragment;
+import com.anditer.goalit.R;
 
 import java.util.ArrayList;
 import java.util.List;

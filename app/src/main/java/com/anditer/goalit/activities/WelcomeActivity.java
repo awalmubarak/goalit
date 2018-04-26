@@ -1,4 +1,4 @@
-package com.anditer.goalit;
+package com.anditer.goalit.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.anditer.goalit.R;
 import com.anditer.goalit.utils.PrefManager;
 
 public class WelcomeActivity extends AppCompatActivity {

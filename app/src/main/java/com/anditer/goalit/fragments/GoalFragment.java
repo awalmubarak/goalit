@@ -1,4 +1,4 @@
-package com.anditer.goalit;
+package com.anditer.goalit.fragments;
 
 
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.anditer.goalit.POJOs.Goal;
+import com.anditer.goalit.R;
 import com.anditer.goalit.adapters.GoalAdapter;
 
 import java.util.ArrayList;
@@ -45,13 +46,19 @@ public class GoalFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_goal, container, false);
         populateGoalListWithGoals();
+        setUpRecyclerViewAndAdapter(view);
+        return view;
+    }
+
+
+
+    private void setUpRecyclerViewAndAdapter(View view){
         goalRecyclerView = view.findViewById(R.id.goalRecyclerView);
         layoutManager = new LinearLayoutManager(getContext());
         goalRecyclerView.setLayoutManager(layoutManager);
         goalAdapter = new GoalAdapter(getContext(), goalList);
         goalRecyclerView.setAdapter(goalAdapter);
 
-        return view;
     }
 
 }

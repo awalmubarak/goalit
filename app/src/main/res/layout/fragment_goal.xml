@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/goalRecyclerView"
-    tools:context="com.anditer.goalit.GoalFragment">
+    tools:context="com.anditer.goalit.fragments.GoalFragment">
 
 
 </android.support.v7.widget.RecyclerView>
