@@ -22,7 +22,11 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/WelcomeStyle" />
-        <activity android:name=".ProfileActivity">
+        <activity android:name=".ProfileActivity"
+            android:parentActivityName=".MainActivity">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
         </activity>
     </application>
 
